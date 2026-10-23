@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/mediqueue_dev?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      pool-name: MediQueueDevHikariCP
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+mediqueue:
+  jwt:
+    secret: ${JWT_SECRET:dev_secret_key_mediqueue_local_environment_only_not_for_prod_256bit}
+
+logging:
+  level:
+    com.mediqueue: DEBUG
+    org.springframework.security: INFO
+    org.flywaydb: INFO

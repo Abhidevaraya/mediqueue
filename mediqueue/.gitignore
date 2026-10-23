@@ -1,0 +1,57 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbproject/genfiles.properties
+/nbproject/project.xml
+
+### VS Code ###
+.vscode/
+
+### Secrets and Local Config ###
+.env
+.env.*
+.env.local
+*.local
+!.env.example
+frontend/.env
+frontend/.env.*
+frontend/.env.local
+!frontend/.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+_backup_original/
+
+### Frontend Node and Build Artifacts ###
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+*.tsbuildinfo
+frontend/*.tsbuildinfo
+
+### Storage & Uploads ###
+storage/documents/*
+!storage/documents/.gitkeep
+

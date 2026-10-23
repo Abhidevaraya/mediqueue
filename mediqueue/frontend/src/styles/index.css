@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Exact Light Palette Tokens */
+  --color-primary: #7966D8;
+  --color-primary-hover: #6853C7;
+  --color-primary-surface: #EDE8FF;
+  --color-primary-contrast: #FFFFFF;
+
+  --color-surface: #F7F5FF;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-subtle: #EDE8FF;
+  --color-border: #E5E1F0;
+
+  --color-text-primary: #24213D;
+  --color-text-secondary: #716D85;
+  --color-text-muted: #9590A8;
+  --color-heading: #30275F;
+
+  --color-success: #16805D;
+  --color-success-surface: #E6F6F0;
+  --color-warning: #A65C12;
+  --color-warning-surface: #FDF4E9;
+  --color-error: #B4233C;
+  --color-error-surface: #FDEEED;
+  --color-info: #3E63DD;
+  --color-info-surface: #EEF2FE;
+
+  --focus-ring: 0 0 0 3px rgba(121, 102, 216, 0.35);
+}
+
+.dark {
+  /* Separately Designed Dark Theme Palette */
+  --color-primary: #9482F2;
+  --color-primary-hover: #8370EC;
+  --color-primary-surface: #2A244E;
+  --color-primary-contrast: #FFFFFF;
+
+  --color-surface: #120F24;
+  --color-surface-elevated: #1B1735;
+  --color-surface-subtle: #241F43;
+  --color-border: #332D58;
+
+  --color-text-primary: #F5F3FF;
+  --color-text-secondary: #A39EBE;
+  --color-text-muted: #726E8C;
+  --color-heading: #E5E1FF;
+
+  --color-success: #22C55E;
+  --color-success-surface: rgba(34, 197, 94, 0.12);
+  --color-warning: #F59E0B;
+  --color-warning-surface: rgba(245, 158, 11, 0.12);
+  --color-error: #F43F5E;
+  --color-error-surface: rgba(244, 63, 94, 0.12);
+  --color-info: #60A5FA;
+  --color-info-surface: rgba(96, 165, 250, 0.12);
+
+  --focus-ring: 0 0 0 3px rgba(148, 130, 242, 0.4);
+}
+
+@layer base {
+  * {
+    @apply border-surface-border;
+  }
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Accessible focus ring */
+.focus-visible-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

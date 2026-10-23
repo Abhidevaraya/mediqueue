@@ -1,0 +1,61 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Maven target directory
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot devtools restart marker
+.reload
+
+# Eclipse / Spring Tool Suite (STS) project metadata (optional in VCS)
+.settings/
+.project
+.classpath
+.factorypath
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Visual Studio Code
+.vscode/
+
+# Environment files with credentials
+.env
+.env.*
+!.env.example
+
+# Document storage
+storage/documents/*
+!storage/documents/.gitkeep

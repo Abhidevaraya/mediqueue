@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: mediqueue-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss'Z'
+    time-zone: UTC
+    default-property-inclusion: non_null
+
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-stacktrace: never
+    include-message: never
+
+mediqueue:
+  hospital:
+    timezone: ${HOSPITAL_TIMEZONE:Asia/Kolkata}
+  jwt:
+    secret: ${JWT_SECRET:}
+    expiration-ms: ${JWT_ACCESS_TOKEN_EXPIRATION:86400000}
+  cors:
+    allowed-origins: ${FRONTEND_URL:http://localhost:3000,http://localhost:5173}
+  bootstrap:
+    admin:
+      email: ${ADMIN_BOOTSTRAP_EMAIL:}
+      password: ${ADMIN_BOOTSTRAP_PASSWORD:}
+      name: ${ADMIN_BOOTSTRAP_NAME:System Administrator}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+      probes:
+        enabled: true

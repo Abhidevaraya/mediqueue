@@ -1,0 +1,12 @@
+CREATE TABLE patients (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    date_of_birth DATE NULL,
+    gender VARCHAR(20) NULL,
+    address VARCHAR(255) NULL,
+    version BIGINT NOT NULL DEFAULT 0,
+    created_at TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    updated_at TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    CONSTRAINT uk_patients_user_id UNIQUE (user_id),
+    CONSTRAINT fk_patients_user_id FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
